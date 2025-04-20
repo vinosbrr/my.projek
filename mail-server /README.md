@@ -185,12 +185,7 @@ quit
 Connection closed by foreign host.
 ```
 ---
-Melihat pesan menggunakan perintah telnet <nama domain> <port>. 
-Login user menggunakan user <nama user>. 
-Dan masukkan password menggunakan pass <password>. 
-Untuk melihat list pesan yang diterima menggunakan perintah list. 
-Dan untuk membuka pesan yang diterima menggunakan perintah retr <nomer pesan>.<br> Perintah quit untuk keluar dari telnet.
-
+Untuk melihat pesan yang diterima, gunakan perintah "telnet <nama domain> <port>". Setelah terhubung, lakukan proses login dengan mengetikkan perintah "user <nama_user>" lalu tekan Enter, kemudian masukkan kata sandi dengan perintah "pass <password>". Untuk menampilkan daftar pesan yang masuk, gunakan perintah "list" Untuk membaca isi pesan tertentu, gunakan perintah "retr <nomor_pesan>". Setelah selesai, ketik perintah "quit" untuk keluar dari sesi Telnet.
 ```bash
 Trying 192.168.99.1...
 Connected to mail.contoh.com.
