@@ -48,14 +48,20 @@ Debian 9 DVD 1,2,3.ISO
 
 ---
 ## Postfix and Dovecot Configuration
+Sebelum memulai instalasi mail server, disarankan untuk menyiapkan terlebih dahulu sebuah domain khusus yang akan digunakan dalam proses konfigurasi. Pada contoh kali ini, domain yang digunakan adalah mail.contoh.com. yang dikonfigurasi secara lokal menggunakan layanan DNS dari BIND9.
+
+---
 ###  Konfigurasi Postfix <<
 [ 1.1 Update Repository dan install Package Postfix ]
-
 ```bash
 apt update
 apt install postfix dovecot-imapd dovecot-pop3d
 ```
+Setelah proses instalasi selesai, akan muncul sebuah jendela konfigurasi (message box). Pada tahap ini, pilih opsi Internet Site agar mail server dapat berkomunikasi menggunakan protokol SMTP secara langsung untuk pengiriman email.
 🫡
+Selanjutnya masukkan nama domain yang digunakan.
+🫡
+
 [ 1.2 Setelah Installasi edit file ]
 ```bash
 nano /etc/postfix/main.cf
@@ -75,6 +81,7 @@ maildirmake.dovecot /etc/skel/Maildir
 dpkg-reconfigure postfix
 ```
 🫡
+
 [ 1.4 Restart Postfix ]
 ```bash
 systemctl restart postfix
