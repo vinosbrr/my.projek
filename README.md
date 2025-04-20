@@ -66,6 +66,32 @@ cd source-code-python
 
 
 ---
+## Postfix and Dovecot Configuration
+### Installasi Postfix dan Dovecot
+[ 1. Update Repository dan install Package Postfix ]
+
+```bash
+apt update
+apt install postfix dovecot-imapd dovecot-pop3d
+```
+[ 2. Setelah Installasi edit file ]
+```bash
+nano /etc/postfix/main.cf
+```
+```bash
+inet_protocols = all
+
+#tambahkan baris berikut pada baris paling bawah
+home_mailbox = Maildir/
+```
+[ 3. Buat mail directory di directory /etc/skel dan masukkan perintah ]
+```bash
+cd /etc/skel
+maildirmake.dovecot /etc/skel/Maildir
+dpkg-reconfigure postfix
+```
+
+---
 ### Connection Options
 - Support Android 
 - Support Termux
