@@ -62,15 +62,14 @@ cd source-code-python
 ```
 
 ---
-
-## Run
+## Preparation All Packages Before 
 
 ```bash
-python script.py
+- Network (IPv4)
+- DNS Server (Bind9)
 ```
+
 ---
-
-
 
 ### Connection Options
 - Support Android 
