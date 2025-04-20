@@ -30,10 +30,6 @@ If you encounter persistent issues, feel free to contact the developer. Contribu
 - [Vinosbrr](https://github.com/vinosbrr) (Developer)
 
 
-#### Join Group
-[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176) 
-
-
 ---
 ## For Windows/VPS/RDP User
 * Download And Install Git [`Click Here`](https://git-scm.com/downloads)
@@ -319,16 +315,22 @@ Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail serv
 - Support Roundcube
 
 ---
-### Features Script
-| Script   | Kasir | Group | Search | Download | Tools | Ai | Game | Fun | Owner |
-| -------- | ----- | ----- | ------ | -------- | ----- | -- | ---- | --- | ----- |
-| Work     |  ✅   |   ✅  |   ✅   |    ✅    |  ✅   | ✅ |  ✅  | ✅  |  ✅   |
-
+### Features 
+- Automates mail server installation steps
+- Configures essential services (Postfix, Dovecot, etc.)
+- Uses Debian 9 base system for compatibility
+- Lightweight and easy to modify
+  
 ---
 License: [MIT](https://choosealicense.com/licenses/mit/)
 
 #### Support Me
 - [Instagram](https://www.instagram.com/vinosbrr?igsh=MWJ6dXU1eXdzdWcwbw==)
+
+#### Join Group
+
+[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176) 
+
 
 ## Thanks to
 | [![Vinosbrr](https://github.com/vinosbrr.png?size=100)](https://github.com/vinosbrr)
