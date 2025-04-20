@@ -23,7 +23,7 @@ This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual 
 
 
 ## Contributor
-- [Vinosbrr](https://github.com/vinosbrr) (Createed)
+- [Vinosbrr](https://github.com/vinosbrr) (Created)
 
 
 #### Join Group
@@ -55,12 +55,12 @@ cd source-code-python
 [ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
 
 ```bash
-git clone https://github.com/vinosbrr/source-code-python
-cd source-code-python
+Debian 9 DVD 1,2,3.ISO
 ```
 
 ---
 ### Preparation All Packages Before 
+- DVD 1,2,3 (Cdrom add) 
 - Network (IPv4)
 - DNS Server (Bind9)
 
@@ -321,10 +321,7 @@ Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail serv
 | -------- | ----- | ----- | ------ | -------- | ----- | -- | ---- | --- | ----- |
 | Work     |  ✅   |   ✅  |   ✅   |    ✅    |  ✅   | ✅ |  ✅  | ✅  |  ✅   |
 
-
-
-
-
+---
 License: [MIT](https://choosealicense.com/licenses/mit/)
 
 #### Support Me
