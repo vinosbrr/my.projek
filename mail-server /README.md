@@ -31,28 +31,10 @@ If you encounter persistent issues, feel free to contact the developer. Contribu
 
 
 ---
-## For Windows/VPS/RDP User
-* Download And Install Git [`Click Here`](https://git-scm.com/downloads)
-
-```bash
-git clone https://github.com/vinosbrr/source-code-python
-cd source-code-python 
-```
-
----
-## For Termux/Ubuntu/SSH User
-
-```bash
-pkg update && pkg upgrade
-pkg install python
-pkg install git
-git clone https://github.com/vinosbrr/source-code-python
-cd source-code-python
-```
-
----
+## DISCLAIMER
 [ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
-
+This project is provided as-is and is still in an experimental phase. Not recommended for production use. For questions, feedback, or bug reports, please contact the developer.
+> Developed by Vinosbrr
 ```bash
 Debian 9 DVD 1,2,3.ISO
 ```
@@ -320,16 +302,20 @@ Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail serv
 - Configures essential services (Postfix, Dovecot, etc.)
 - Uses Debian 9 base system for compatibility
 - Lightweight and easy to modify
+
+### Requirements
+- Virtual Machine (VMware/VirtualBox)
+- Debian 9 ISO installed
+- Root access or sudo privileges
+- Basic knowledge of Linux and shell scripting
   
 ---
 License: [MIT](https://choosealicense.com/licenses/mit/)
 
 #### Support Me
 - [Instagram](https://www.instagram.com/vinosbrr?igsh=MWJ6dXU1eXdzdWcwbw==)
-
-#### Join Group
-
-[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176) 
+- [Group WhatsApp](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176)
+- [Youtube](https://youtube.com/@wongesbrr?si=RQbf8_FRIju8ACCU)
 
 
 ## Thanks to
