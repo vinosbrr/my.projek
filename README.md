@@ -71,7 +71,7 @@ Computer and Network Engineering Student
 > © Developed by Vinosbrr 2025
 
 ---
-License: [MIT](https://choosealicense.com/licenses/mit/)
+License: [MIT License](./LICENSE)
 
 #### Support Me
 - [Instagram](https://www.instagram.com/vinosbrr?igsh=MWJ6dXU1eXdzdWcwbw==)
