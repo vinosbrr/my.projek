@@ -24,14 +24,14 @@ This project aims to help users understand and build a functioning mail server f
 This script was developed by [Vinosbrr](https://github.com/vinosbrr) using a Virtual Machine environment with the Debian 9 ISO and the "brain" library. It is currently an experimental project and may include unexpected behavior. Users are encouraged to test and explore its features, but it is not recommended for use in production environments.
 
 If you encounter persistent issues, feel free to contact the developer. Contributions, suggestions, and improvements are welcome. Please make sure to review the license before using or modifying this script. ~ By Vinosbrr
-
+> Developed by Vinosbrr
 
 ## Contributor
 - [Vinosbrr](https://github.com/vinosbrr) (Developer)
 
 
 ---
-## DISCLAIMER
+## Disclaimer
 [ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
 This project is provided as-is and is still in an experimental phase. Not recommended for production use. For questions, feedback, or bug reports, please contact the developer.
 > Developed by Vinosbrr
@@ -289,7 +289,7 @@ systemctl restart apache2
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 
-
+> Developed by Vinosbrr
 ---
 ### Connection Options
 - Support Telnet
@@ -322,5 +322,5 @@ License: [MIT](https://choosealicense.com/licenses/mit/)
 | [![Vinosbrr](https://github.com/vinosbrr.png?size=100)](https://github.com/vinosbrr)
 | --- | 
 | [Vinosbrr](https://github.com/vinosbrr) |
-
+> Developed by Vinosbrr
 
