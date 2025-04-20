@@ -227,21 +227,25 @@ $config['default_host'] = 'mail.contoh.com';
 // For example %n = mail.domain.tld, %t = domain.tld
 $config['smtp_server'] = 'mail.contoh.com';
 ...
+```
 ```bash
 ...
 // SMTP port. Use 25 for cleartext, 465 for Implicit TLS, or 587 for STARTTLS (default)
 $config['smtp_port'] = 25;
 ...
+```
 ```bash
 ...
 // will use the current username for login
 $config['smtp_user'] = '';
 ...
+```
 ```bash
 ...
 // will use the current user's password for login
 $config['smtp_pass'] = '';
 ...
+```
 [ 3.3 Configure ulang ( langkah ini bisa dilewati )]
 ```bash
 dpkg-reconfigure roundcube-core
