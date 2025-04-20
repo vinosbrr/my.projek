@@ -17,8 +17,12 @@ This repository is designed to simplify understanding and implementation of core
 
 
 
-This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual Machine, Debian 9 iso, and the brain library. The script is currently in the development phase (BETA), so there may still be some errors that can be ignored. If errors persist even after debugging, please contact the owner for assistance. ~ By Vinosbrr
+This script was developed by [Vinosbrr](https://github.com/vinosbrr) using a Virtual Machine environment with the Debian 9 ISO and the "brain" library. It is currently an experimental project and may include unexpected behavior. Users are encouraged to test and explore its features, but it is not recommended for use in production environments.
 
+If you encounter persistent issues, feel free to contact the developer. Contributions, suggestions, and improvements are welcome. Please make sure to review the license before using or modifying this script. ~ By Vinosbrr
+> © Developed by Vinosbrr 2025
+
+---
 ## Project Structure
 This repository consists of several service directories, each containing its own documentation and configuration scripts:
 
@@ -71,9 +75,12 @@ License: [MIT](https://choosealicense.com/licenses/mit/)
 
 #### Support Me
 - [Instagram](https://www.instagram.com/vinosbrr?igsh=MWJ6dXU1eXdzdWcwbw==)
+- [Group WhatsApp](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176)
+- [Youtube](https://youtube.com/@wongesbrr?si=RQbf8_FRIju8ACCU)
 
 ## Thanks to
 | [![Vinosbrr](https://github.com/vinosbrr.png?size=100)](https://github.com/vinosbrr)
 | --- | 
 | [Vinosbrr](https://github.com/vinosbrr) |
+> © Developed by Vinosbrr 2025
 
