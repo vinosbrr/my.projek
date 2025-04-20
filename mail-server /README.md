@@ -293,7 +293,7 @@ Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail serv
 - Basic knowledge of Linux and shell scripting
   
 ---
-License: [MIT](https://choosealicense.com/licenses/mit/)
+License: [MIT License](../LICENSE)
 
 #### Support Me
 - [Instagram](https://www.instagram.com/vinosbrr?igsh=MWJ6dXU1eXdzdWcwbw==)
