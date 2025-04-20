@@ -153,21 +153,43 @@ apt install telnet
 ```
 ```bash
 telnet mail.contoh.com 25
+```
+```bash
 Trying 192.168.99.1...
 Connected to mail.contoh.com.
 Escape character is '^]'.
 220 debian ESMTP Postfix (Debian/GNU)
-mail from: satu@mail.contoh.com     #ketik ini lalu enter 
+```
+```bash
+mail from: satu@mail.contoh.com
+```
+```bash
 250 2.1.0 Ok
-rcpt to: dua@mail.contoh.com      #ketik ini lalu enter 
+```
+```bash
+rcpt to: dua@mail.contoh.com
+```
+```bash
 250 2.1.5 Ok
-data       #ketik ini lalu enter
+```
+```bash
+data
+```
+```bash
 354 End data with <CR><LF>.<CR><LF>
-Subject: Testing         #ketik ini lalu enter
+```
+```bash
+Subject: Testing
 Hello Pakkk!
 .
+```
+```bash
 250 2.0.0 Ok: queued as 7DEAD11DF
-quit               #ketik ini lalu enter
+```
+```bash
+quit
+```
+```bash
 221 2.0.0 Bye
 Connection closed by foreign host.
 ```
