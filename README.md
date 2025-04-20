@@ -108,7 +108,7 @@ nano /etc/dovecot/dovecot.conf
 listen = *       # Uncomment baris ini
 ......
 ```
-[ 2.2 Edit file konfigurasi /etc/dovecot/conf.d/10-auth.conf & Uncomment ]
+[ 2.2 Edit file konfigurasi /etc/dovecot/conf.d/10-auth.conf & Uncomment, yes = no ]
 ```bash
 nano /etc/dovecot.conf/conf.d/10-auth.conf
 ...
@@ -117,17 +117,63 @@ nano /etc/dovecot.conf/conf.d/10-auth.conf
 disable_plaintext_auth = no     # Uncomment baris ini, ganti yes ke no
 ...
 ```
-[ 2.3 Edit file konfigurasi /etc/dovecot/conf.d/10-mail.conf & Uncomment ]
+[ 2.3 Edit file konfigurasi /etc/dovecot/conf.d/10-mail.conf & Uncomment, Comment ]
 ```bash
 nano /etc/dovecot.conf/conf.d/10-mail.conf
+...
+mail_location = maildir:~/Maildir       # Uncomment baris ini
+...
+...
+# mail_location = mbox:~/mail:INBOX=/var/mail/%u   # Beri comment baris berikut
+...
+```
+[ 2.4 Restart Dovecot ]
+```bash
+systemctl restart dovecot
+```
+
+---
+### Menambahkan user Email 
+```bash
+adduser saya
+adduser dia
+```
+
+---
+### Restart Postfix dan Dovecot
+```bash
+systemctl restart postfix dovecot
+```
+
+---
+### Testing Postfix dan Dovecot menggunakan Telnet
+```bash
+apt install telnet 
+telnet mail.contoh.com 25
+Trying 192.168.99.1...
+Connected to mail.contoh.com.
+Escape character is '^]'.
+220 debian ESMTP Postfix (Debian/GNU)
+mail from: satu@mail.contoh.com     #ketik ini lalu enter 
+250 2.1.0 Ok
+rcpt to: dua@mail.contoh.com      #ketik ini lalu enter 
+250 2.1.5 Ok
+data       #ketik ini lalu enter
+354 End data with <CR><LF>.<CR><LF>
+Subject: Testing         #ketik ini lalu enter
+Hello Pakkk!
+.
+250 2.0.0 Ok: queued as 7DEAD11DF
+quit               #ketik ini lalu enter
+221 2.0.0 Bye
+Connection closed by foreign host.
 ```
 
 ---
 ### Connection Options
-- Support Android 
-- Support Termux
-- Support Ubuntu
-- Support SSH
+- Support Telnet
+- Support Mariadb
+- Support Roundcube
 
 ---
 ### Features Script
