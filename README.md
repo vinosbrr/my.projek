@@ -67,28 +67,59 @@ cd source-code-python
 
 ---
 ## Postfix and Dovecot Configuration
-### Installasi Postfix dan Dovecot
-[ 1. Update Repository dan install Package Postfix ]
+###  Konfigurasi Postfix <<
+[ 1.1 Update Repository dan install Package Postfix ]
 
 ```bash
 apt update
 apt install postfix dovecot-imapd dovecot-pop3d
 ```
-[ 2. Setelah Installasi edit file ]
+🫡
+[ 1.2 Setelah Installasi edit file ]
 ```bash
 nano /etc/postfix/main.cf
 ```
 ```bash
+....
+inet_interfaces = all
 inet_protocols = all
 
 #tambahkan baris berikut pada baris paling bawah
 home_mailbox = Maildir/
 ```
-[ 3. Buat mail directory di directory /etc/skel dan masukkan perintah ]
+[ 1.3 Buat mail directory di directory /etc/skel dan masukkan perintah ]
 ```bash
 cd /etc/skel
 maildirmake.dovecot /etc/skel/Maildir
 dpkg-reconfigure postfix
+```
+🫡
+[ 1.4 Restart Postfix ]
+```bash
+systemctl restart postfix
+```
+###  Konfigurasi Dovecot >>
+[ 2.1 Edit file konfigurasi /etc/dovecot/dovecot.conf & Uncomment pada baris ]
+```bash
+nano /etc/dovecot/dovecot.conf
+...
+# If you want to specify non-default ports or anything more complex,
+# edit conf.d/master.conf.
+listen = *       # Uncomment baris ini
+......
+```
+[ 2.2 Edit file konfigurasi /etc/dovecot/conf.d/10-auth.conf & Uncomment ]
+```bash
+nano /etc/dovecot.conf/conf.d/10-auth.conf
+...
+# connection is considered secure and plaintext authentication is allowed.
+# See also ssl=required setting.
+disable_plaintext_auth = no     # Uncomment baris ini, ganti yes ke no
+...
+```
+[ 2.3 Edit file konfigurasi /etc/dovecot/conf.d/10-mail.conf & Uncomment ]
+```bash
+nano /etc/dovecot.conf/conf.d/10-mail.conf
 ```
 
 ---
