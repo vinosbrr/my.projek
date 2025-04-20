@@ -1,4 +1,4 @@
-# my.project
+# MAIL SERVER
 
 the repository here is My Project, experiments and assignments from school 
 ## Information
