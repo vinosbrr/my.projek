@@ -168,6 +168,91 @@ quit               #ketik ini lalu enter
 221 2.0.0 Bye
 Connection closed by foreign host.
 ```
+---
+Melihat pesan menggunakan perintah telnet <nama domain> <port>. 
+Login user menggunakan user <nama user>. 
+Dan masukkan password menggunakan pass <password>. 
+Untuk melihat list pesan yang diterima menggunakan perintah list. 
+Dan untuk membuka pesan yang diterima menggunakan perintah retr <nomer pesan>.<br> Perintah quit untuk keluar dari telnet.
+
+```bash
+Trying 192.168.99.1...
+Connected to mail.contoh.com.
+Escape character is '^]'.
++OK Dovecot (Debian) ready.
+user dua
++OK
+pass 0909
++OK Logged in.
+list
++OK 1 messages:
+1 436
+.
+retr 1
++OK 436 octets
+Return-Path: <satu@mail.contoh.com>
+X-Original-To: dua@mail.contoh.com
+Delivered-To: dua@mail.contoh.com
+Received: from unknown (unknown [192.168.99.1])
+	by debian (Postfix) with SMTP id 7DEAD11DF
+	for <dua@mail.contoh.com>; Sun,  20 Apr 2025 16:28:48 +0700 (WIB)
+Subject: Testing
+Message-Id: <20250420174142.7DEAD11DF@debian>
+Date: Sun,  20 Apr 2025 16:28:48 +0700 (WIB)
+From: satu@mail.contoh.com
+
+Hello Pakkk!
+.
+quit
++OK Logging out.
+Connection closed by foreign host.
+```
+---
+### Konfigurasi Roundcube
+[ 3.1 Install MariaDB dan Roundcube ]
+```bash
+apt install mariadb-server roundcube
+```
+🫡
+[ 3.2 Edit file /etc/roundcube/config.inc.php. isi sesuaikan berikut ]
+```bash
+nano /etc/roundcube/config.inc.php.
+...
+// For example %n = mail.domain.tld, %t = domain.tld
+$config['default_host'] = 'mail.contoh.com';
+...
+```
+```bash
+...
+// For example %n = mail.domain.tld, %t = domain.tld
+$config['smtp_server'] = 'mail.contoh.com';
+...
+```bash
+...
+// SMTP port. Use 25 for cleartext, 465 for Implicit TLS, or 587 for STARTTLS (default)
+$config['smtp_port'] = 25;
+...
+```bash
+...
+// will use the current username for login
+$config['smtp_user'] = '';
+...
+```bash
+...
+// will use the current user's password for login
+$config['smtp_pass'] = '';
+...
+[ 3.3 Configure ulang ( langkah ini bisa dilewati )]
+```bash
+dpkg-reconfigure roundcube-core
+```
+🫡
+
+
+
+
+
+
 
 ---
 ### Connection Options
