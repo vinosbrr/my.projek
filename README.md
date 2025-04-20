@@ -17,15 +17,13 @@ the repository here is My Project, experiments and assignments from school
 
 
 
-This script is created by [Vinosbrr](https://github.com/vinosbrr) using Acode,VScode and the brain library. The script is currently in the development phase (BETA), so there may still be some errors that can be ignored. If errors persist even after debugging, please contact the owner for assistance. ~ By Vinosbrr
+This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual Machine, Debian 9 iso, and the brain library. The script is currently in the development phase (BETA), so there may still be some errors that can be ignored. If errors persist even after debugging, please contact the owner for assistance. ~ By Vinosbrr
 
 
 
 
 ## Contributor
-- [Vinosbrr](https://github.com/vinosbrr) (Create)
-- A. I. (Penyumbang Code)
-
+- [Vinosbrr](https://github.com/vinosbrr) (Createed)
 
 
 #### Join Group
@@ -35,7 +33,6 @@ This script is created by [Vinosbrr](https://github.com/vinosbrr) using Acode,VS
 
 ---
 ## For Windows/VPS/RDP User
-
 * Download And Install Git [`Click Here`](https://git-scm.com/downloads)
 
 
@@ -58,7 +55,7 @@ cd source-code-python
 
 
 
-[ RECOMMENDED INSTALL ON TERMUX ]
+[ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
 ```bash
 git clone https://github.com/vinosbrr/source-code-python
 cd source-code-python
