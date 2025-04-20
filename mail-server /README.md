@@ -126,8 +126,8 @@ cd
 ### Menambahkan user Email 
 Tambahkan beberapa akun pengguna beserta kata sandinya menggunakan perintah adduser. Akun-akun ini akan digunakan sebagai user email pada mail server. Pada percobaan kali ini, akan dibuat dua user, yaitu satu dan dua, yang masing-masing dapat digunakan untuk mengirim dan menerima email dalam jaringan lokal.
 ```bash
-adduser saya
-adduser dia
+adduser satu
+adduser dua
 ```
 
 ---
