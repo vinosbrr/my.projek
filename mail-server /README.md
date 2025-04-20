@@ -17,9 +17,9 @@ the repository here is My Project, experiments and assignments from school
 
 
 
-This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual Machine, Debian 9 iso, and the brain library. The script is currently in the development phase (BETA), so there may still be some errors that can be ignored. If errors persist even after debugging, please contact the owner for assistance. ~ By Vinosbrr
+This script was developed by [Vinosbrr](https://github.com/vinosbrr) using a Virtual Machine environment with the Debian 9 ISO and the "brain" library. It is currently an experimental project and may include unexpected behavior. Users are encouraged to test and explore its features, but it is not recommended for use in production environments.
 
-
+If you encounter persistent issues, feel free to contact the developer. Contributions, suggestions, and improvements are welcome. Please make sure to review the license before using or modifying this script. ~ By Vinosbrr
 
 
 ## Contributor
@@ -28,7 +28,6 @@ This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual 
 
 #### Join Group
 [![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176) 
-
 
 
 ---
