@@ -80,6 +80,7 @@ cd /etc/skel
 maildirmake.dovecot /etc/skel/Maildir
 dpkg-reconfigure postfix
 ```
+Selanjutnya, akan muncul beberapa pilihan dan kolom input yang perlu diisi. Sesuaikan pengisian tersebut dengan topologi jaringan, konfigurasi sistem, serta kebutuhan mail server yang akan dibangun, agar layanan dapat berjalan secara optimal.
 🫡
 
 [ 1.4 Restart Postfix ]
@@ -123,6 +124,7 @@ cd
 
 ---
 ### Menambahkan user Email 
+Tambahkan beberapa akun pengguna beserta kata sandinya menggunakan perintah adduser. Akun-akun ini akan digunakan sebagai user email pada mail server. Pada percobaan kali ini, akan dibuat dua user, yaitu satu dan dua, yang masing-masing dapat digunakan untuk mengirim dan menerima email dalam jaringan lokal.
 ```bash
 adduser saya
 adduser dia
@@ -136,6 +138,7 @@ systemctl restart postfix dovecot
 
 ---
 ### Testing Postfix dan Dovecot menggunakan Telnet
+Uji coba pengiriman email dapat dilakukan menggunakan perintah telnet <nama domain> <port> dengan menggunakan port 25 (SMTP). Setelah terhubung, masukkan alamat pengirim menggunakan perintah mail from: diikuti oleh alamat email pengirim. Kemudian, masukkan alamat penerima dengan perintah rcpt to:. Untuk menulis pesan, ketik perintah data, lalu tekan Enter. Isikan subjek email dengan mengetikkan Subject: <isi subjek>, tekan Enter, lalu ketik isi pesan yang ingin dikirim. Setelah selesai menulis pesan, akhiri dengan mengetikkan satu titik (.) di baris baru, kemudian tekan Enter untuk mengirim pesan.
 ```bash
 apt install telnet 
 ```
