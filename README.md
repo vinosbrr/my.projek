@@ -1,9 +1,9 @@
 # my.project
+my.projek is a structured repository containing configuration scripts and documentation for various server services based on *Debian 9*, running on *Virtual Machines (VMware/VirtualBox)*. This project was created as part of a learning journey and exploration in building and managing computer Network System Administration independently.
 
-the repository here is My Project, experiments and assignments from school 
+This repository is designed to simplify understanding and implementation of core server services commonly used in local networks (intranet), and to serve as a practical reference for students, network technicians, and system administrators.
+
 ## Information
-
-
 
 <div align="center">
 <a href="https://github.com/vinosbrr/Sbrr-Bot/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/vinosbrr/Sbrr-Bot?label=Watchers&color=green&style=flat-square"></a>
@@ -19,307 +19,52 @@ the repository here is My Project, experiments and assignments from school
 
 This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual Machine, Debian 9 iso, and the brain library. The script is currently in the development phase (BETA), so there may still be some errors that can be ignored. If errors persist even after debugging, please contact the owner for assistance. ~ By Vinosbrr
 
+## Project Structure
+This repository consists of several service directories, each containing its own documentation and configuration scripts:
 
+### 1. [DHCP Server](./dhcp-server)
+Provides a **Dynamic Host Configuration Protocol (DHCP)** service for automatically assigning IP addresses to devices in the network.
 
+### 2. [FTP Server](./ftp-server)
+Configuration of a **File Transfer Protocol (FTP)** server, enabling file transfer between devices using a fast and easy-to-use protocol.
 
-## Contributor
-- [Vinosbrr](https://github.com/vinosbrr) (Created)
+### 3. [Remote Server (SSH)](./remote-server)
+Setup of a **Secure Shell (SSH)** server for secure remote access and server management via encrypted connections.
 
+### 4. [Web Server (Apache2)](./web-server)
+Implementation of an **Apache2 web server** to serve both static and dynamic web pages in local or public environments.
 
-#### Join Group
-[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KZmCzNMege942CH7qa7176) 
+### 5. [DNS Server (Bind9)](./dns-server)
+Configuration of a **Domain Name System (DNS)** service using **Bind9** to resolve domain names to IP addresses locally.
 
+### 6. [Database Server (MySQL & PhpMyAdmin)](./database-server)
+Installation and management of a **MySQL Server** with a web-based interface using **PhpMyAdmin** for efficient database administration.
 
-
----
-## For Windows/VPS/RDP User
-* Download And Install Git [`Click Here`](https://git-scm.com/downloads)
-
-```bash
-git clone https://github.com/vinosbrr/source-code-python
-cd source-code-python 
-```
-
----
-## For Termux/Ubuntu/SSH User
-
-```bash
-pkg update && pkg upgrade
-pkg install python
-pkg install git
-git clone https://github.com/vinosbrr/source-code-python
-cd source-code-python
-```
+### 7. [Mail Server](./mail-server)
+Setup of a local **mail server** using **Postfix** and **Dovecot**, supporting email sending via **SMTP**, and receiving via **POP3/IMAP**. Ideal for testing and internal network simulation.
 
 ---
-[ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
-
-```bash
-Debian 9 DVD 1,2,3.ISO
-```
-
----
-### Preparation All Packages Before 
-- DVD 1,2,3 (Cdrom add) 
-- Network (IPv4)
-- DNS Server (Bind9)
-
+## Objectives and Benefits
+- Acts as personal documentation and open learning resource.
+- Provides real-world examples of implementing server services in a local network.
+- Helps students and beginners understand the fundamentals of server and network administration.
 
 ---
-## Postfix and Dovecot Configuration
-###  Konfigurasi Postfix <<
-[ 1.1 Update Repository dan install Package Postfix ]
-
-```bash
-apt update
-apt install postfix dovecot-imapd dovecot-pop3d
-```
-🫡
-[ 1.2 Setelah Installasi edit file ]
-```bash
-nano /etc/postfix/main.cf
-```
-```bash
-....
-inet_interfaces = all
-inet_protocols = all
-
-#tambahkan baris berikut pada baris paling bawah
-home_mailbox = Maildir/
-```
-[ 1.3 Buat mail directory di directory /etc/skel dan masukkan perintah ]
-```bash
-cd /etc/skel
-maildirmake.dovecot /etc/skel/Maildir
-dpkg-reconfigure postfix
-```
-🫡
-[ 1.4 Restart Postfix ]
-```bash
-systemctl restart postfix
-```
-###  Konfigurasi Dovecot >>
-[ 2.1 Edit file konfigurasi /etc/dovecot/dovecot.conf & Uncomment pada baris ]
-```bash
-nano /etc/dovecot/dovecot.conf
-...
-# If you want to specify non-default ports or anything more complex,
-# edit conf.d/master.conf.
-listen = *       # Uncomment baris ini
-......
-```
-[ 2.2 Edit file konfigurasi /etc/dovecot/conf.d/10-auth.conf & Uncomment, yes = no ]
-```bash
-nano /etc/dovecot.conf/conf.d/10-auth.conf
-...
-# connection is considered secure and plaintext authentication is allowed.
-# See also ssl=required setting.
-disable_plaintext_auth = no     # Uncomment baris ini, ganti yes ke no
-...
-```
-[ 2.3 Edit file konfigurasi /etc/dovecot/conf.d/10-mail.conf & Uncomment, Comment ]
-```bash
-nano /etc/dovecot.conf/conf.d/10-mail.conf
-...
-mail_location = maildir:~/Maildir       # Uncomment baris ini
-...
-...
-# mail_location = mbox:~/mail:INBOX=/var/mail/%u   # Beri comment baris berikut
-...
-```
-[ 2.4 Restart Dovecot ]
-```bash
-systemctl restart dovecot
-cd
-```
+## Requirements
+- Virtual Machine (VMware/VirtualBox)
+- Debian 9 ISO
+- Root or sudo access
+- Basic knowledge of Linux and networking
+- 
+---
+## Contribution
+This project is open-source. If you'd like to contribute or report issues, feel free to open a pull request or submit an issue.
 
 ---
-### Menambahkan user Email 
-```bash
-adduser saya
-adduser dia
-```
-
----
-### Restart Postfix dan Dovecot
-```bash
-systemctl restart postfix dovecot
-```
-
----
-### Testing Postfix dan Dovecot menggunakan Telnet
-```bash
-apt install telnet 
-```
-```bash
-telnet mail.contoh.com 25
-```
-```bash
-Trying 192.168.99.1...
-Connected to mail.contoh.com.
-Escape character is '^]'.
-220 debian ESMTP Postfix (Debian/GNU)
-```
-```bash
-mail from: satu@mail.contoh.com
-```
-```bash
-250 2.1.0 Ok
-```
-```bash
-rcpt to: dua@mail.contoh.com
-```
-```bash
-250 2.1.5 Ok
-```
-```bash
-data
-```
-```bash
-354 End data with <CR><LF>.<CR><LF>
-```
-```bash
-Subject: Testing
-Hello Pakkk!
-.
-```
-```bash
-250 2.0.0 Ok: queued as 7DEAD11DF
-```
-```bash
-quit
-```
-```bash
-221 2.0.0 Bye
-Connection closed by foreign host.
-```
----
-Melihat pesan menggunakan perintah telnet <nama domain> <port>. 
-Login user menggunakan user <nama user>. 
-Dan masukkan password menggunakan pass <password>. 
-Untuk melihat list pesan yang diterima menggunakan perintah list. 
-Dan untuk membuka pesan yang diterima menggunakan perintah retr <nomer pesan>.<br> Perintah quit untuk keluar dari telnet.
-
-```bash
-Trying 192.168.99.1...
-Connected to mail.contoh.com.
-Escape character is '^]'.
-+OK Dovecot (Debian) ready.
-user dua
-+OK
-pass 0909
-+OK Logged in.
-list
-+OK 1 messages:
-1 436
-.
-retr 1
-+OK 436 octets
-Return-Path: <satu@mail.contoh.com>
-X-Original-To: dua@mail.contoh.com
-Delivered-To: dua@mail.contoh.com
-Received: from unknown (unknown [192.168.99.1])
-	by debian (Postfix) with SMTP id 7DEAD11DF
-	for <dua@mail.contoh.com>; Sun,  20 Apr 2025 16:28:48 +0700 (WIB)
-Subject: Testing
-Message-Id: <20250420174142.7DEAD11DF@debian>
-Date: Sun,  20 Apr 2025 16:28:48 +0700 (WIB)
-From: satu@mail.contoh.com
-
-Hello Pakkk!
-.
-quit
-+OK Logging out.
-Connection closed by foreign host.
-```
----
-### Konfigurasi Roundcube
-[ 3.1 Install MariaDB dan Roundcube ]
-```bash
-apt install mariadb-server roundcube
-```
-🫡
-[ 3.2 Edit file /etc/roundcube/config.inc.php. isi sesuaikan berikut ]
-```bash
-nano /etc/roundcube/config.inc.php.
-...
-// For example %n = mail.domain.tld, %t = domain.tld
-$config['default_host'] = 'mail.contoh.com';
-...
-```
-```bash
-...
-// For example %n = mail.domain.tld, %t = domain.tld
-$config['smtp_server'] = 'mail.contoh.com';
-...
-```
-```bash
-...
-// SMTP port. Use 25 for cleartext, 465 for Implicit TLS, or 587 for STARTTLS (default)
-$config['smtp_port'] = 25;
-...
-```
-```bash
-...
-// will use the current username for login
-$config['smtp_user'] = '';
-...
-```
-```bash
-...
-// will use the current user's password for login
-$config['smtp_pass'] = '';
-...
-```
-[ 3.3 Configure ulang ( langkah ini bisa dilewati )]
-```bash
-dpkg-reconfigure roundcube-core
-```
-🫡
-[ 3.3 Edit file /etc/apache2/apache2.conf dan konfigurasi ]
-```bash
-nano /etc/apache2/apache2.conf
-...
-#tambahkan baris paling bawah
-Include /etc/roundcube/apache.conf
-```
-[ 3.4 Masuk directory dan tambahkan file ]
-```bash
-cd /etc/apache2/sites-available
-touch mail.conf
-nano mail.conf
-```
-```bash
-<VirtualHost *:80>
-    ServerName mail.contoh.local
-    DocumentRoot /usr/share/roundcube
-</VirtualHost>
-```
-[ 3.5 Disable config default dan enable mail config ]
-```bash
-a2dissite 000-default.conf
-a2ensite mail.conf
-```
-[ 3.6 Restart Apache2 ]
-```bash
-systemctl restart apache2
-```
----
-### Testing
-Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
-
-
----
-### Connection Options
-- Support Telnet
-- Support Mariadb
-- Support Roundcube
-
----
-### Features Script
-| Script   | Kasir | Group | Search | Download | Tools | Ai | Game | Fun | Owner |
-| -------- | ----- | ----- | ------ | -------- | ----- | -- | ---- | --- | ----- |
-| Work     |  ✅   |   ✅  |   ✅   |    ✅    |  ✅   | ✅ |  ✅  | ✅  |  ✅   |
+## Author
+Vinosbrr
+Computer and Network Engineering Student  
+> © Developed by Vinosbrr 2025
 
 ---
 License: [MIT](https://choosealicense.com/licenses/mit/)
