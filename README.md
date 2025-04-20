@@ -35,8 +35,6 @@ This script is created by [Vinosbrr](https://github.com/vinosbrr) using Virtual 
 ## For Windows/VPS/RDP User
 * Download And Install Git [`Click Here`](https://git-scm.com/downloads)
 
-
-
 ```bash
 git clone https://github.com/vinosbrr/source-code-python
 cd source-code-python 
@@ -53,33 +51,28 @@ git clone https://github.com/vinosbrr/source-code-python
 cd source-code-python
 ```
 
-
-
+---
 [ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
+
 ```bash
 git clone https://github.com/vinosbrr/source-code-python
 cd source-code-python
 ```
 
 ---
-## Preparation All Packages Before 
-
-```bash
+### Preparation All Packages Before 
 - Network (IPv4)
 - DNS Server (Bind9)
-```
+
 
 ---
-
 ### Connection Options
 - Support Android 
 - Support Termux
 - Support Ubuntu
 - Support SSH
+
 ---
-
-
-
 ### Features Script
 | Script   | Kasir | Group | Search | Download | Tools | Ai | Game | Fun | Owner |
 | -------- | ----- | ----- | ------ | -------- | ----- | -- | ---- | --- | ----- |
