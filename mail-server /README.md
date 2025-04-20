@@ -1,9 +1,13 @@
 # MAIL SERVER
+A custom mail server setup script created by Vinosbrr, designed to automate the configuration of a basic mail server environment on Debian 9 using a virtual machine. This project is experimental and intended for educational or testing purposes only.
+## What is a Mail Server?
+- A mail server is a system responsible for sending, receiving, and storing email. It consists of components such as:
+- SMTP (Simple Mail Transfer Protocol): Sends outbound email (e.g., Postfix).
+- IMAP/POP3: Retrieves incoming email (e.g., Dovecot).
+- MTA (Mail Transfer Agent): Routes messages between mail servers. Mail servers are essential for communication in personal, corporate, and enterprise networks.
+This project aims to help users understand and build a functioning mail server from scratch using open-source tools and manual configuration.
 
-the repository here is My Project, experiments and assignments from school 
 ## Information
-
-
 
 <div align="center">
 <a href="https://github.com/vinosbrr/Sbrr-Bot/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/vinosbrr/Sbrr-Bot?label=Watchers&color=green&style=flat-square"></a>
