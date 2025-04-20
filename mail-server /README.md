@@ -138,11 +138,9 @@ systemctl restart postfix dovecot
 
 ---
 ### Testing Postfix dan Dovecot menggunakan Telnet
-Uji coba pengiriman email dapat dilakukan menggunakan perintah telnet <nama domain> <port> dengan menggunakan port 25 (SMTP). Setelah terhubung, masukkan alamat pengirim menggunakan perintah mail from: diikuti oleh alamat email pengirim. Kemudian, masukkan alamat penerima dengan perintah rcpt to:. Untuk menulis pesan, ketik perintah data, lalu tekan Enter. Isikan subjek email dengan mengetikkan Subject: <isi subjek>, tekan Enter, lalu ketik isi pesan yang ingin dikirim. Setelah selesai menulis pesan, akhiri dengan mengetikkan satu titik (.) di baris baru, kemudian tekan Enter untuk mengirim pesan.
+Uji coba pengiriman email dapat dilakukan menggunakan perintah "telnet <nama domain> <port>" dengan menggunakan port 25 (SMTP). Setelah terhubung, masukkan alamat pengirim menggunakan perintah "mail from: "diikuti oleh alamat email pengirim. Kemudian, masukkan alamat penerima dengan perintah "rcpt to: ". Untuk menulis pesan, ketik perintah "data", lalu tekan Enter. Isikan subjek email dengan mengetikkan "Subject: <isi subjek>", tekan Enter, lalu ketik isi pesan yang ingin dikirim. Setelah selesai menulis pesan, akhiri dengan mengetikkan satu titik (.) di baris baru, kemudian tekan Enter untuk mengirim pesan.
 ```bash
 apt install telnet 
-```
-```bash
 telnet mail.contoh.com 25
 ```
 ```bash
@@ -150,37 +148,17 @@ Trying 192.168.99.1...
 Connected to mail.contoh.com.
 Escape character is '^]'.
 220 debian ESMTP Postfix (Debian/GNU)
-```
-```bash
 mail from: satu@mail.contoh.com
-```
-```bash
 250 2.1.0 Ok
-```
-```bash
 rcpt to: dua@mail.contoh.com
-```
-```bash
 250 2.1.5 Ok
-```
-```bash
 data
-```
-```bash
 354 End data with <CR><LF>.<CR><LF>
-```
-```bash
 Subject: Testing
 Hello Pakkk!
 .
-```
-```bash
 250 2.0.0 Ok: queued as 7DEAD11DF
-```
-```bash
 quit
-```
-```bash
 221 2.0.0 Bye
 Connection closed by foreign host.
 ```
