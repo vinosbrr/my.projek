@@ -23,7 +23,7 @@ If you encounter persistent issues, feel free to contact the developer. Contribu
 
 
 ## Contributor
-- [Vinosbrr](https://github.com/vinosbrr) (Created)
+- [Vinosbrr](https://github.com/vinosbrr) (Developer)
 
 
 #### Join Group
