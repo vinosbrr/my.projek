@@ -130,6 +130,7 @@ mail_location = maildir:~/Maildir       # Uncomment baris ini
 [ 2.4 Restart Dovecot ]
 ```bash
 systemctl restart dovecot
+cd
 ```
 
 ---
@@ -149,6 +150,8 @@ systemctl restart postfix dovecot
 ### Testing Postfix dan Dovecot menggunakan Telnet
 ```bash
 apt install telnet 
+```
+```bash
 telnet mail.contoh.com 25
 Trying 192.168.99.1...
 Connected to mail.contoh.com.
@@ -251,11 +254,37 @@ $config['smtp_pass'] = '';
 dpkg-reconfigure roundcube-core
 ```
 🫡
-
-
-
-
-
+[ 3.3 Edit file /etc/apache2/apache2.conf dan konfigurasi ]
+```bash
+nano /etc/apache2/apache2.conf
+...
+#tambahkan baris paling bawah
+Include /etc/roundcube/apache.conf
+```
+[ 3.4 Masuk directory dan tambahkan file ]
+```bash
+cd /etc/apache2/sites-available
+touch mail.conf
+nano mail.conf
+```
+```bash
+<VirtualHost *:80>
+    ServerName mail.contoh.local
+    DocumentRoot /usr/share/roundcube
+</VirtualHost>
+```
+[ 3.5 Disable config default dan enable mail config ]
+```bash
+a2dissite 000-default.conf
+a2ensite mail.conf
+```
+[ 3.6 Restart Apache2 ]
+```bash
+systemctl restart apache2
+```
+---
+### Testing
+Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 
 
 ---
