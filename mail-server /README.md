@@ -24,7 +24,7 @@ This project aims to help users understand and build a functioning mail server f
 This script was developed by [Vinosbrr](https://github.com/vinosbrr) using a Virtual Machine environment with the Debian 9 ISO and the "brain" library. It is currently an experimental project and may include unexpected behavior. Users are encouraged to test and explore its features, but it is not recommended for use in production environments.
 
 If you encounter persistent issues, feel free to contact the developer. Contributions, suggestions, and improvements are welcome. Please make sure to review the license before using or modifying this script. ~ By Vinosbrr
-> Developed by Vinosbrr
+> © Developed by Vinosbrr 2025
 
 ## Contributor
 - [Vinosbrr](https://github.com/vinosbrr) (Developer)
@@ -34,7 +34,7 @@ If you encounter persistent issues, feel free to contact the developer. Contribu
 ## Disclaimer
 [ RECOMMENDED INSTALL ON VIRTUAL MACHINE ]
 This project is provided as-is and is still in an experimental phase. Not recommended for production use. For questions, feedback, or bug reports, please contact the developer.
-> Developed by Vinosbrr
+> © Developed by Vinosbrr 2025
 ```bash
 Debian 9 DVD 1,2,3.ISO
 ```
@@ -305,5 +305,5 @@ License: [MIT](https://choosealicense.com/licenses/mit/)
 | [![Vinosbrr](https://github.com/vinosbrr.png?size=100)](https://github.com/vinosbrr)
 | --- | 
 | [Vinosbrr](https://github.com/vinosbrr) |
-> Developed by Vinosbrr
+> © Developed by Vinosbrr 2025
 
