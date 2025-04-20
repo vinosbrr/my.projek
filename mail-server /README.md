@@ -255,7 +255,7 @@ nano mail.conf
 ```
 ```bash
 <VirtualHost *:80>
-    ServerName mail.contoh.local
+    ServerName mail.contoh.com
     DocumentRoot /usr/share/roundcube
 </VirtualHost>
 ```
