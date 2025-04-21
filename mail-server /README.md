@@ -289,7 +289,9 @@ cd
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 ![internet site](images/17.png)
+Klik pada compose dan isikan pesan untuk user lainnya. Lalu klik send.
 ![internet site](images/18.png)
+Logout dan login ke user penerima, maka akan muncul pesan yang dikirim
 ![internet site](images/19.png)
 
 > Developed by Vinosbrr
