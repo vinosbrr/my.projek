@@ -44,7 +44,7 @@ Debian 9 DVD 1,2,3.ISO
 - DVD 1,2,3 (Cdrom add) 
 - Network (IPv4)
 - Web Server (Apache2)
-- DNS Server (Bind9) [Click Here](./dns-server)
+- DNS Server (Bind9) [Click Here](../dns-server)
 
 
 ---
