@@ -58,9 +58,9 @@ apt update
 apt install postfix dovecot-imapd dovecot-pop3d
 ```
 Setelah proses instalasi selesai, akan muncul sebuah jendela konfigurasi (message box). Pada tahap ini, pilih opsi Internet Site agar mail server dapat berkomunikasi menggunakan protokol SMTP secara langsung untuk pengiriman email.
-🫡
+![internet site](images/1.png)
 Selanjutnya masukkan nama domain yang digunakan.
-🫡
+![domain](images/2.png)
 
 [ 1.2 Setelah Installasi edit file ]
 ```bash
