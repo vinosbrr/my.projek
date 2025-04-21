@@ -61,11 +61,12 @@ apt install bind9
 ```
 
 [ 1.2 Setelah Installasi masuk directory /etc/bind dan edit file named.conf.local ]
-named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebut
+
 ```bash
 cd /etc/bind
 nano named.conf.local
 ```
+named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebut.
 ![NCL](images/ncl.png)
 
 [ 1.3 copy file lokal dan edit file ]
@@ -108,7 +109,7 @@ Selanjutnya jika berhasil akan muncul seperti gambar berikut
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 
-> Developed by Vinosbrr
+> © Developed by Vinosbrr
 ---
 ### Connection Options
 - Support cmd
@@ -116,8 +117,8 @@ Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail serv
 
 ---
 ### Features 
-- Automates mail server installation steps
-- Configures essential services (Postfix, Dovecot, etc.)
+- Automates dns server installation steps
+- Configures essential services (Bind9, Dnsutils, etc.)
 - Uses Debian 9 base system for compatibility
 - Lightweight and easy to modify
 
