@@ -44,7 +44,7 @@ Configuration of a **Domain Name System (DNS)** service using **Bind9** to resol
 ### 6. [Database Server (MySQL & PhpMyAdmin)](./database-server)
 Installation and management of a **MySQL Server** with a web-based interface using **PhpMyAdmin** for efficient database administration.
 
-### 7. [Mail Server](./mail-server)
+### 7. [Mail Server](./mail-server%20)
 Setup of a local **mail server** using **Postfix** and **Dovecot**, supporting email sending via **SMTP**, and receiving via **POP3/IMAP**. Ideal for testing and internal network simulation.
 
 ---
