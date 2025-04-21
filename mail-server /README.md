@@ -266,6 +266,7 @@ Include /etc/roundcube/apache.conf
 ```bash
 cd /etc/apache2/sites-available
 touch mail.conf
+ls
 nano mail.conf
 ```
 ```bash
@@ -282,12 +283,15 @@ a2ensite mail.conf
 [ 3.6 Restart Apache2 ]
 ```bash
 systemctl restart apache2
+cd
 ```
 ---
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 ![internet site](images/17.png)
 ![internet site](images/18.png)
+![internet site](images/19.png)
+
 > Developed by Vinosbrr
 ---
 ### Connection Options
