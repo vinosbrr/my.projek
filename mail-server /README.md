@@ -212,7 +212,8 @@ Connection closed by foreign host.
 ```bash
 apt install mariadb-server roundcube
 ```
-🫡
+![internet site](images/10.png)
+![internet site](images/11.png)
 [ 3.2 Edit file /etc/roundcube/config.inc.php. isi sesuaikan berikut ]
 ```bash
 nano /etc/roundcube/config.inc.php.
@@ -249,7 +250,7 @@ $config['smtp_pass'] = '';
 ```bash
 dpkg-reconfigure roundcube-core
 ```
-🫡
+![internet site](images/12.png)
 [ 3.3 Edit file /etc/apache2/apache2.conf dan konfigurasi ]
 ```bash
 nano /etc/apache2/apache2.conf
@@ -281,7 +282,8 @@ systemctl restart apache2
 ---
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
-
+![internet site](images/13.png)
+![internet site](images/14.png)
 > Developed by Vinosbrr
 ---
 ### Connection Options
