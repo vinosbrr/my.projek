@@ -44,7 +44,7 @@ Debian 9 DVD 1,2,3.ISO
 - DVD 1,2,3 (Cdrom add) 
 - Network (IPv4)
 - Web Server (Apache2)
-- DNS Server (Bind9)
+- DNS Server (Bind9) [Click Here](./dns-server)
 
 
 ---
@@ -308,6 +308,7 @@ Logout dan login ke user penerima, maka akan muncul pesan yang dikirim
 - Uses Debian 9 base system for compatibility
 - Lightweight and easy to modify
 
+---
 ### Requirements
 - Virtual Machine (VMware/VirtualBox)
 - Debian 9 ISO installed
