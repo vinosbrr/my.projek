@@ -59,14 +59,10 @@ Sebelum memulai instalasi dns server, disarankan untuk menyiapkan terlebih dahul
 apt update
 apt install bind9
 ```
-Setelah proses instalasi selesai, akan muncul sebuah jendela konfigurasi (message box). Pada tahap ini, pilih opsi Internet Site agar mail server dapat berkomunikasi menggunakan protokol SMTP secara langsung untuk pengiriman email.
-🫡
-Selanjutnya masukkan nama domain yang digunakan.
-🫡
 
 [ 1.2 Setelah Installasi masuk directory /etc/bind dan edit file named.conf.local ]
+named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebut
 ```bash
-named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebu
 cd /etc/bind
 nano named.conf.local
 ```
@@ -86,7 +82,7 @@ nano db.192
 file db.ip digunakan untuk menerjemahkan alamat IP menjadi nama domain. File ini biasanya digunakan untuk keperluan reverse DNS lookup. Di dalam file ini, terdapat record PTR (Pointer) yang memetakan alamat IP tertentu ke nama domain yang sesuai. Misalnya, alamat IP 192.168.56.10 dapat dipetakan ke nama domain ns1.dns.contoh.com. Konfigurasi ini penting untuk memastikan bahwa server DNS dapat melakukan pencarian terbalik (reverse lookup) dengan benar.
 ![ip](images/192.png)
 
-### Kongigurasi Resolv
+### Konfigurasi Resolv.conf
 ```bash
 nano /etc/resolv.conf
 ```
@@ -97,189 +93,18 @@ nameserver 192.168.99.1
 [ 1.4 Restart bind9 ]
 ```bash
 systemctl restart bind9
-```
-###  Konfigurasi Dovecot >>
-[ 2.1 Edit file konfigurasi /etc/dovecot/dovecot.conf & Uncomment pada baris ]
-```bash
-nano /etc/dovecot/dovecot.conf
-...
-# If you want to specify non-default ports or anything more complex,
-# edit conf.d/master.conf.
-listen = *       # Uncomment baris ini
-......
-```
-[ 2.2 Edit file konfigurasi /etc/dovecot/conf.d/10-auth.conf & Uncomment, yes = no ]
-```bash
-nano /etc/dovecot.conf/conf.d/10-auth.conf
-...
-# connection is considered secure and plaintext authentication is allowed.
-# See also ssl=required setting.
-disable_plaintext_auth = no     # Uncomment baris ini, ganti yes ke no
-...
-```
-[ 2.3 Edit file konfigurasi /etc/dovecot/conf.d/10-mail.conf & Uncomment, Comment ]
-```bash
-nano /etc/dovecot.conf/conf.d/10-mail.conf
-...
-mail_location = maildir:~/Maildir       # Uncomment baris ini
-...
-...
-# mail_location = mbox:~/mail:INBOX=/var/mail/%u   # Beri comment baris berikut
-...
-```
-[ 2.4 Restart Dovecot ]
-```bash
-systemctl restart dovecot
 cd
 ```
-
----
-### Menambahkan user Email 
-Tambahkan beberapa akun pengguna beserta kata sandinya menggunakan perintah adduser. Akun-akun ini akan digunakan sebagai user email pada mail server. Pada percobaan kali ini, akan dibuat dua user, yaitu satu dan dua, yang masing-masing dapat digunakan untuk mengirim dan menerima email dalam jaringan lokal.
+### Testing bind9 menggunakan dnsutils
+Uji coba ​bind9 dengan nslookup, dnsutils adalah kumpulan utilitas baris perintah di sistem operasi berbasis Linux yang digunakan untuk melakukan query dan mendiagnosis masalah terkait Domain Name System (DNS). Paket ini sering terinstal secara default pada distribusi seperti Debian dan Ubuntu
 ```bash
-adduser satu
-adduser dua
+apt install dnsutils
+nslookup contoh.com
+nslookup mail.contoh.com
+nslookup 192.168.99.1 
 ```
-
----
-### Restart Postfix dan Dovecot
-```bash
-systemctl restart postfix dovecot
-```
-
----
-### Testing Postfix dan Dovecot menggunakan Telnet
-Uji coba pengiriman email dapat dilakukan menggunakan perintah "telnet <nama domain> <port>" dengan menggunakan port 25 (SMTP). Setelah terhubung, masukkan alamat pengirim menggunakan perintah "mail from: "diikuti oleh alamat email pengirim. Kemudian, masukkan alamat penerima dengan perintah "rcpt to: ". Untuk menulis pesan, ketik perintah "data", lalu tekan Enter. Isikan subjek email dengan mengetikkan "Subject: <isi subjek>", tekan Enter, lalu ketik isi pesan yang ingin dikirim. Setelah selesai menulis pesan, akhiri dengan mengetikkan satu titik (.) di baris baru, kemudian tekan Enter untuk mengirim pesan.
-```bash
-apt install telnet 
-telnet mail.contoh.com 25
-```
-```bash
-Trying 192.168.99.1...
-Connected to mail.contoh.com.
-Escape character is '^]'.
-220 debian ESMTP Postfix (Debian/GNU)
-mail from: satu@mail.contoh.com
-250 2.1.0 Ok
-rcpt to: dua@mail.contoh.com
-250 2.1.5 Ok
-data
-354 End data with <CR><LF>.<CR><LF>
-Subject: Testing
-Hello Pakkk!
-.
-250 2.0.0 Ok: queued as 7DEAD11DF
-quit
-221 2.0.0 Bye
-Connection closed by foreign host.
-```
----
-Untuk melihat pesan yang diterima, gunakan perintah "telnet <nama domain> <port>". Setelah terhubung, lakukan proses login dengan mengetikkan perintah "user <nama_user>" lalu tekan Enter, kemudian masukkan kata sandi dengan perintah "pass <password>". Untuk menampilkan daftar pesan yang masuk, gunakan perintah "list" Untuk membaca isi pesan tertentu, gunakan perintah "retr <nomor_pesan>". Setelah selesai, ketik perintah "quit" untuk keluar dari sesi Telnet.
-```bash
-Trying 192.168.99.1...
-Connected to mail.contoh.com.
-Escape character is '^]'.
-+OK Dovecot (Debian) ready.
-user dua
-+OK
-pass 0909
-+OK Logged in.
-list
-+OK 1 messages:
-1 436
-.
-retr 1
-+OK 436 octets
-Return-Path: <satu@mail.contoh.com>
-X-Original-To: dua@mail.contoh.com
-Delivered-To: dua@mail.contoh.com
-Received: from unknown (unknown [192.168.99.1])
-	by debian (Postfix) with SMTP id 7DEAD11DF
-	for <dua@mail.contoh.com>; Sun,  20 Apr 2025 16:28:48 +0700 (WIB)
-Subject: Testing
-Message-Id: <20250420174142.7DEAD11DF@debian>
-Date: Sun,  20 Apr 2025 16:28:48 +0700 (WIB)
-From: satu@mail.contoh.com
-
-Hello Pakkk!
-.
-quit
-+OK Logging out.
-Connection closed by foreign host.
-```
----
-### Konfigurasi Roundcube
-[ 3.1 Install MariaDB dan Roundcube ]
-```bash
-apt install mariadb-server roundcube
-```
-🫡
-[ 3.2 Edit file /etc/roundcube/config.inc.php. isi sesuaikan berikut ]
-```bash
-nano /etc/roundcube/config.inc.php.
-...
-// For example %n = mail.domain.tld, %t = domain.tld
-$config['default_host'] = 'mail.contoh.com';
-...
-```
-```bash
-...
-// For example %n = mail.domain.tld, %t = domain.tld
-$config['smtp_server'] = 'mail.contoh.com';
-...
-```
-```bash
-...
-// SMTP port. Use 25 for cleartext, 465 for Implicit TLS, or 587 for STARTTLS (default)
-$config['smtp_port'] = 25;
-...
-```
-```bash
-...
-// will use the current username for login
-$config['smtp_user'] = '';
-...
-```
-```bash
-...
-// will use the current user's password for login
-$config['smtp_pass'] = '';
-...
-```
-[ 3.3 Configure ulang ( langkah ini bisa dilewati )]
-```bash
-dpkg-reconfigure roundcube-core
-```
-🫡
-[ 3.3 Edit file /etc/apache2/apache2.conf dan konfigurasi ]
-```bash
-nano /etc/apache2/apache2.conf
-...
-#tambahkan baris paling bawah
-Include /etc/roundcube/apache.conf
-```
-[ 3.4 Masuk directory dan tambahkan file ]
-```bash
-cd /etc/apache2/sites-available
-touch mail.conf
-nano mail.conf
-```
-```bash
-<VirtualHost *:80>
-    ServerName mail.contoh.com
-    DocumentRoot /usr/share/roundcube
-</VirtualHost>
-```
-[ 3.5 Disable config default dan enable mail config ]
-```bash
-a2dissite 000-default.conf
-a2ensite mail.conf
-```
-[ 3.6 Restart Apache2 ]
-```bash
-systemctl restart apache2
-```
----
+Selanjutnya jika berhasil akan muncul seperti gambar berikut
+![tes](images/ns.png)
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 
