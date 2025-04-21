@@ -78,14 +78,24 @@ home_mailbox = Maildir/
 ```bash
 cd /etc/skel
 maildirmake.dovecot /etc/skel/Maildir
+ls
 dpkg-reconfigure postfix
 ```
 Selanjutnya, akan muncul beberapa pilihan dan kolom input yang perlu diisi. Sesuaikan pengisian tersebut dengan topologi jaringan, konfigurasi sistem, serta kebutuhan mail server yang akan dibangun, agar layanan dapat berjalan secara optimal.
-🫡
+![internet site](images/1.png)
+![internet site](images/2.png)
+![internet site](images/3.png)
+![internet site](images/4.png)
+![internet site](images/5.png)
+![internet site](images/6.png)
+![internet site](images/7.png)
+![internet site](images/8.png)
+![internet site](images/9.png)
 
 [ 1.4 Restart Postfix ]
 ```bash
 systemctl restart postfix
+cd
 ```
 ###  Konfigurasi Dovecot >>
 [ 2.1 Edit file konfigurasi /etc/dovecot/dovecot.conf & Uncomment pada baris ]
