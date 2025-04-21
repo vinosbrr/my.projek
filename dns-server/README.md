@@ -69,7 +69,7 @@ Selanjutnya masukkan nama domain yang digunakan.
 cd /etc/bind
 nano named.conf.local
 ```
-[NCL](images/ncl.png)
+![NCL](images/ncl.png)
 
 [ 1.2 copy file lokal dan editr file ]
 ```bash
