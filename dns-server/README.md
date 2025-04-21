@@ -5,11 +5,11 @@ A custom DNS server setup script created by Vinosbrr, designed to automate the c
 DNS (Domain Name System) is the system that translates human-readable domain names like example.com into IP addresses such as 192.0.2.1, which computers use to communicate with each other.A DNS server works like the "phonebook" of the internet, making sure users are directed to the correct server when they enter a domain name.
 
 Core components of a DNS server:
-BIND9: One of the most widely used open-source DNS server software.
-Zone Files: Define domain-to-IP mappings.
-Forward and Reverse Lookup Zones:
-Forward: Domain name → IP address
-Reverse: IP address → Domain name
+- BIND9: One of the most widely used open-source DNS server software.
+- Zone Files: Define domain-to-IP mappings.
+- Forward and Reverse Lookup Zones:
+- Forward: Domain name → IP address
+- Reverse: IP address → Domain name
 
 ## Information
 
