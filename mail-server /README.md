@@ -130,7 +130,6 @@ mail_location = maildir:~/Maildir       # Uncomment baris ini
 [ 2.4 Restart Dovecot ]
 ```bash
 systemctl restart dovecot
-cd
 ```
 
 ---
@@ -252,6 +251,10 @@ $config['smtp_pass'] = '';
 dpkg-reconfigure roundcube-core
 ```
 ![internet site](images/12.png)
+![internet site](images/13.png)
+![internet site](images/14.png)
+![internet site](images/15.png)
+![internet site](images/16.png)
 [ 3.3 Edit file /etc/apache2/apache2.conf dan konfigurasi ]
 ```bash
 nano /etc/apache2/apache2.conf
@@ -283,8 +286,8 @@ systemctl restart apache2
 ---
 ### Testing
 Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
-![internet site](images/13.png)
-![internet site](images/14.png)
+![internet site](images/17.png)
+![internet site](images/18.png)
 > Developed by Vinosbrr
 ---
 ### Connection Options
