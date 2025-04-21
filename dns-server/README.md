@@ -71,12 +71,19 @@ nano named.conf.local
 ```
 ![NCL](images/ncl.png)
 
+
 [ 1.2 copy file lokal dan editr file ]
 ```bash
 cp db.domain
 cp db.ip
 nano db.domain
 ```
+![domain](images/d.png)
+
+```bash
+nano db.192
+```
+![ip](images/192.png)
 ```bash
 maildirmake.dovecot /etc/skel/Maildir
 dpkg-reconfigure postfix
