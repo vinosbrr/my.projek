@@ -59,7 +59,9 @@ apt update
 apt install postfix dovecot-imapd dovecot-pop3d
 ```
 Setelah proses instalasi selesai, akan muncul sebuah jendela konfigurasi (message box). Pada tahap ini, pilih opsi Internet Site agar mail server dapat berkomunikasi menggunakan protokol SMTP secara langsung untuk pengiriman email.
+
 ![internet site](images/1.png)
+
 Selanjutnya masukkan nama domain yang digunakan.
 ![domain](images/2.png)
 
@@ -214,6 +216,7 @@ apt install mariadb-server roundcube
 ```
 ![internet site](images/10.png)
 ![internet site](images/11.png)
+
 [ 3.2 Edit file /etc/roundcube/config.inc.php. isi sesuaikan berikut ]
 ```bash
 nano /etc/roundcube/config.inc.php.
