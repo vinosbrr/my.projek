@@ -66,34 +66,37 @@ Selanjutnya masukkan nama domain yang digunakan.
 
 [ 1.2 Setelah Installasi masuk directory /etc/bind dan edit file named.conf.local ]
 ```bash
+named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebu
 cd /etc/bind
 nano named.conf.local
 ```
 ![NCL](images/ncl.png)
 
-
-[ 1.2 copy file lokal dan editr file ]
+[ 1.3 copy file lokal dan edit file ]
 ```bash
 cp db.domain
 cp db.ip
 nano db.domain
 ```
+File db.domain digunakan untuk menerjemahkan nama domain menjadi alamat IP. Di dalam file ini, terdapat beberapa record penting. Record SOA (Start of Authority) berisi informasi utama tentang zona, seperti nama domain utama dan alamat email administrator. Record NS (Nameserver) menunjukkan server DNS yang mengelola domain tersebut. Record A (Address) memetakan subdomain seperti www atau mail ke alamat IP tertentu. Selain itu, terdapat juga record MX (Mail Exchange) yang menunjukkan server email untuk domain tersebut.
 ![domain](images/d.png)
-
 ```bash
 nano db.192
 ```
+file db.ip digunakan untuk menerjemahkan alamat IP menjadi nama domain. File ini biasanya digunakan untuk keperluan reverse DNS lookup. Di dalam file ini, terdapat record PTR (Pointer) yang memetakan alamat IP tertentu ke nama domain yang sesuai. Misalnya, alamat IP 192.168.56.10 dapat dipetakan ke nama domain ns1.dns.contoh.com. Konfigurasi ini penting untuk memastikan bahwa server DNS dapat melakukan pencarian terbalik (reverse lookup) dengan benar.
 ![ip](images/192.png)
-```bash
-maildirmake.dovecot /etc/skel/Maildir
-dpkg-reconfigure postfix
-```
-Selanjutnya, akan muncul beberapa pilihan dan kolom input yang perlu diisi. Sesuaikan pengisian tersebut dengan topologi jaringan, konfigurasi sistem, serta kebutuhan mail server yang akan dibangun, agar layanan dapat berjalan secara optimal.
-🫡
 
-[ 1.4 Restart Postfix ]
+### Kongigurasi Resolv
 ```bash
-systemctl restart postfix
+nano /etc/resolv.conf
+```
+```bash
+search contoh.com
+nameserver 192.168.99.1
+```
+[ 1.4 Restart bind9 ]
+```bash
+systemctl restart bind9
 ```
 ###  Konfigurasi Dovecot >>
 [ 2.1 Edit file konfigurasi /etc/dovecot/dovecot.conf & Uncomment pada baris ]
