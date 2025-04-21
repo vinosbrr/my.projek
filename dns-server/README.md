@@ -106,8 +106,6 @@ nslookup 192.168.99.1
 ```
 Selanjutnya jika berhasil akan muncul seperti gambar berikut
 ![tes](images/ns.png)
-### Testing
-Selanjutnya buka web browser pada sisi client dan masukkan domain dari mail server, maka akan muncul interface dari roundcube. Lalu login menggunakan salah satu user yang telah dibuat.
 
 > © Developed by Vinosbrr
 ---
