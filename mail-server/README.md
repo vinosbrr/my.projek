@@ -112,7 +112,7 @@ listen = *       # Uncomment baris ini
 ```
 [ 2.2 Edit file konfigurasi /etc/dovecot/conf.d/10-auth.conf & Uncomment, yes = no ]
 ```bash
-nano /etc/dovecot.conf/conf.d/10-auth.conf
+nano /etc/dovecot/conf.d/10-auth.conf
 ...
 # connection is considered secure and plaintext authentication is allowed.
 # See also ssl=required setting.
@@ -121,7 +121,7 @@ disable_plaintext_auth = no     # Uncomment baris ini, ganti yes ke no
 ```
 [ 2.3 Edit file konfigurasi /etc/dovecot/conf.d/10-mail.conf & Uncomment, Comment ]
 ```bash
-nano /etc/dovecot.conf/conf.d/10-mail.conf
+nano /etc/dovecot/conf.d/10-mail.conf
 ...
 mail_location = maildir:~/Maildir       # Uncomment baris ini
 ...
