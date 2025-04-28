@@ -49,69 +49,24 @@ Debian 9 DVD 1,2,3.ISO
 - Network (IPv4)
 
 ---
-## BIND9 Configuration
-Sebelum memulai instalasi dns server, disarankan untuk menyiapkan terlebih dahulu sebuah domain khusus yang akan digunakan dalam proses konfigurasi. Pada contoh kali ini, domain yang digunakan adalah contoh.com. yang dikonfigurasi secara lokal menggunakan layanan DNS dari BIND9.
+##  Configuration
 
 ---
 ###  Konfigurasi BIND9 <<
-[ 1.1 Update Repository dan install Package bind9 ]
+[ 1.1 Update Repository dan install Package apache2 ]
 ```bash
 apt update
 apt install apache2
 ```
 
-[ 1.2 Setelah Installasi masuk directory /etc/bind dan edit file named.conf.local ]
-
-```bash
-cd /etc/bind
-nano named.conf.local
-```
-named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebut.
-![NCL](images/ncl.png)
-
-[ 1.3 copy file lokal dan edit file ]
-```bash
-cp db.domain
-cp db.ip
-nano db.domain
-```
-File db.domain digunakan untuk menerjemahkan nama domain menjadi alamat IP. Di dalam file ini, terdapat beberapa record penting. Record SOA (Start of Authority) berisi informasi utama tentang zona, seperti nama domain utama dan alamat email administrator. Record NS (Nameserver) menunjukkan server DNS yang mengelola domain tersebut. Record A (Address) memetakan subdomain seperti www atau mail ke alamat IP tertentu. Selain itu, terdapat juga record MX (Mail Exchange) yang menunjukkan server email untuk domain tersebut.
-![domain](images/d.png)
-```bash
-nano db.192
-```
-file db.ip digunakan untuk menerjemahkan alamat IP menjadi nama domain. File ini biasanya digunakan untuk keperluan reverse DNS lookup. Di dalam file ini, terdapat record PTR (Pointer) yang memetakan alamat IP tertentu ke nama domain yang sesuai. Misalnya, alamat IP 192.168.56.10 dapat dipetakan ke nama domain ns1.dns.contoh.com. Konfigurasi ini penting untuk memastikan bahwa server DNS dapat melakukan pencarian terbalik (reverse lookup) dengan benar.
-![ip](images/192.png)
-
-### Konfigurasi Resolv.conf
-```bash
-nano /etc/resolv.conf
-```
-```bash
-search contoh.com
-nameserver 192.168.99.1
-```
-[ 1.4 Restart bind9 ]
-```bash
-systemctl restart bind9
-cd
-```
-### Testing bind9 menggunakan dnsutils
-Uji coba ​bind9 dengan nslookup, dnsutils adalah kumpulan utilitas baris perintah di sistem operasi berbasis Linux yang digunakan untuk melakukan query dan mendiagnosis masalah terkait Domain Name System (DNS). Paket ini sering terinstal secara default pada distribusi seperti Debian dan Ubuntu
-```bash
-apt install dnsutils
-nslookup contoh.com
-nslookup mail.contoh.com
-nslookup 192.168.99.1 
-```
 Selanjutnya jika berhasil akan muncul seperti gambar berikut
 ![tes](images/ns.png)
 
 > © Developed by Vinosbrr
 ---
 ### Connection Options
-- Support cmd
-- Support nslookup
+- Support all browser
+- Support putty
 
 ---
 ### Features 
