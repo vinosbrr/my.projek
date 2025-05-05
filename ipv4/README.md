@@ -1,15 +1,17 @@
-## CD/DVD ISO
-A setup script created by Vinosbrr, designed to automate the process of using CD/DVD ISO files within a Debian 9-based virtual machine environment. This project is experimental and intended for educational or testing purposes only.
- 
-## What is a CD/DVD ISO?
-A CD/DVD ISO is an image file archive that contains an exact copy of the data and file structure found on a physical CD or DVD. These files typically have a .iso extension and are widely used for distributing operating systems, software installation packages, or bootable media.
+## IPv4 Address
+A configuration script created by Vinosbrr, designed to automate the setup of IPv4 network settings within a Debian 9-based virtual machine environment. This project is experimental and intended for educational or testing purposes only.
 
-Core components of a Web server:
-- Bootloader: Enables the ISO to boot a system when mounted or burned to physical media.
-- Installer File System: Contains the operating system or software package to be installed.
-- Checksum: A validation tool used to verify the integrity of the ISO file.
-- Mounting Tools: Software or built-in OS features that treat an ISO file as if it were a physical CD/DVD.
-- Virtual Machine (VM): A commonly used environment for ISO deployment, allowing OS installation without needing physical hardware.
+## What is a IPv4 Address?
+An IPv4 address (Internet Protocol version 4) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. It consists of four decimal numbers separated by dots (e.g., 192.168.1.1), and is used to identify devices and facilitate routing of data between them.
+
+Core components of a IPv4 Address:
+- IP Address: The unique identifier assigned to each device on the network (e.g., 192.168.0.10).
+- Subnet Mask: Defines the network portion of the IP address (e.g., 255.255.255.0).
+- Gateway: The IP address of the router or device that forwards traffic to external networks.
+- DNS Server: Resolves domain names to IP addresses (e.g., Google's DNS 8.8.8.8).
+- Network Interface (eth0, ens33, etc.): The physical or virtual device that handles network communication.
+- Configuration Tools: Utilities like ifconfig, ip, or /etc/network/interfaces used to set and manage IPv4 settings.
+  
 ## Information
 
 <div align="center">
