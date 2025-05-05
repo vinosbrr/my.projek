@@ -58,6 +58,7 @@ apt-cdrom add
 ```
 Masukkan Dvd kalian bertahap DVD 2 lalu enter, ulangi diatas, sampai dvd 3.
 ![tes](images/dvd.png)
+[ 1.2 Cek list DVD ]
 ```bash
 nano /etc/apt/sources.list
 ```
