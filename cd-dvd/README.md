@@ -57,11 +57,12 @@ Debian 9 DVD 1,2,3.ISO
 apt-cdrom add
 ```
 Masukkan Dvd kalian bertahap DVD 2 lalu enter, ulangi diatas, sampai dvd 3.
+![tes](images/dvd.png)
 ```bash
 nano /etc/apt/sources.list
 ```
 Selanjutnya jika berhasil akan muncul seperti gambar berikut
-![tes](images/ns.png)
+![tes](images/list.png)
 
 > © Developed by Vinosbrr
 ---
