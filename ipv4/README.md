@@ -82,33 +82,31 @@ iface ens33 inet static
 ```
 ![tes](images/net2.png)
 
-Masukkan Dvd kalian bertahap DVD 2 lalu enter, ulangi diatas, sampai dvd 3.
-![tes](images/dvd.png)
-[ 1.2 Cek list DVD ]
+[ 1.3 Restart Network  ]
 ```bash
-nano /etc/apt/sources.list
+systemctl restart networking
 ```
-Selanjutnya jika berhasil akan muncul seperti gambar berikut
-![tes](images/list.png)
+Kalian bisa reboot dahulu.... Selanjutnya jika berhasil akan muncul seperti gambar berikut atau ip kalian!
+![tes](images/ipa2.png)
 
 > © Developed by Vinosbrr
 ---
 ### Connection Options
-- Support all DVD
-- Support VMware
+- Support static and dynamic IPv4 addressing
+- Compatible with virtual environments such as VMware
 
 ---
 ### Features 
-- Utilizes Debian 9 CD/DVD ISO files for offline package installation
-- Allows mounting of multiple ISO discs (DVD 1, 2, and 3) to access complete package repositories
-- Suitable for environments without internet access
-- Easy to adapt for automated setups using mounted ISO media
-
+- Utilizes IPv4 addressing for reliable network configuration
+- Supports both DHCP (dynamic) and static IP setups
+- Suitable for environments with or without centralized IP management (e.g., DHCP servers)
+- Easy to adapt for automated deployment scripts and network provisioning
 ### Requirements
-- CD/DVD ISO files for Debian 9 (discs 1, 2, and 3)
-- CD/DVD drive or virtual optical drive (for mounting ISOs in VM or physical machine)
-- System configured to mount ISO as local repository (e.g., via /etc/apt/sources.list)
-- Basic understanding of mounting ISO files and using Debian package tools (apt, dpkg)
+- A valid IPv4 address range (e.g., 192.168.1.0/24)
+- Network interface card (NIC) properly installed and detected
+- System configured to assign IPv4 addresses (e.g., via /etc/network/interfaces or netplan)
+- Basic understanding of IP addressing, subnetting, and Linux networking tools (e.g., ip, ifconfig, nmcli)
+
 
 ---
 License: [MIT License](../LICENSE)
