@@ -64,6 +64,7 @@ apt install bind9
 
 ```bash
 cd /etc/bind
+ls
 nano named.conf.local
 ```
 named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebut.
@@ -72,7 +73,7 @@ named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mende
 [ 1.3 copy file lokal dan edit file ]
 ```bash
 cp db.local db.domain
-cp db.127 db.ip
+cp db.127 db.192
 nano db.domain
 ```
 File db.domain digunakan untuk menerjemahkan nama domain menjadi alamat IP. Di dalam file ini, terdapat beberapa record penting. Record SOA (Start of Authority) berisi informasi utama tentang zona, seperti nama domain utama dan alamat email administrator. Record NS (Nameserver) menunjukkan server DNS yang mengelola domain tersebut. Record A (Address) memetakan subdomain seperti www atau mail ke alamat IP tertentu. Selain itu, terdapat juga record MX (Mail Exchange) yang menunjukkan server email untuk domain tersebut.
