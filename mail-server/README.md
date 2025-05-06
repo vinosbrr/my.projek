@@ -41,9 +41,9 @@ Debian 9 DVD 1,2,3.ISO
 
 ---
 ### Preparation All Packages Before 
-- DVD 1,2,3 (Cdrom add) 
-- Network (IPv4)
-- Web Server (Apache2)
+- DVD 1,2,3 (Cdrom add) [Click Here](../cd-dvd)
+- Network (IPv4) [Click Here](../ipv4)
+- Web Server (Apache2) [Click Here](../web-server)
 - DNS Server (Bind9) [Click Here](../dns-server)
 
 
