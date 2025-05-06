@@ -65,6 +65,8 @@ ip a
 ```bash
 nano /etc/network/interfaces
 ```
+![tes](images/net1.png)
+
 dibagian ini kalian isikan seperti berikut!
 
 ```bash
@@ -78,8 +80,7 @@ iface ens33 inet static
           broadcast 192.168.99.255
 '''
 ```
-![tes](images/net.png)
-
+![tes](images/net2.png)
 
 Masukkan Dvd kalian bertahap DVD 2 lalu enter, ulangi diatas, sampai dvd 3.
 ![tes](images/dvd.png)
