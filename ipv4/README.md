@@ -53,11 +53,34 @@ Debian 9 DVD 1,2,3.ISO
 ##  Configuration
 
 ---
-###  Konfigurasi CD/DVD <<
-[ 1.1 Update Repository dan masukkan DVD ]
+###  Konfigurasi IPv4 Static <<
+[ 1.1 Coba cek IP bawaan dahulu]
 ```bash
-apt-cdrom add
+ip a
 ```
+![tes](images/ipa.png)
+
+
+[ 1.2 Masuk ke /etc/network/interfaces ]
+```bash
+nano /etc/network/interfaces
+```
+dibagian ini kalian isikan seperti berikut!
+
+```bash
+'''
+# The primary network interface
+auto ens33
+iface ens33 inet static
+          address 192.168.99.1
+          netmask 255.255.255.0
+          network 192.168.99.0
+          broadcast 192.168.99.255
+'''
+```
+![tes](images/net.png)
+
+
 Masukkan Dvd kalian bertahap DVD 2 lalu enter, ulangi diatas, sampai dvd 3.
 ![tes](images/dvd.png)
 [ 1.2 Cek list DVD ]
