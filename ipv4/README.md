@@ -87,6 +87,10 @@ iface ens33 inet static
 systemctl restart networking
 ```
 Kalian bisa reboot dahulu.... Selanjutnya jika berhasil akan muncul seperti gambar berikut atau ip kalian!
+[ 1.3 lalu Cek lagi  ]
+```bash
+ip a
+```
 ![tes](images/ipa2.png)
 
 > © Developed by Vinosbrr
