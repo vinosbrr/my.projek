@@ -84,6 +84,13 @@ nano db.192
 file db.ip digunakan untuk menerjemahkan alamat IP menjadi nama domain. File ini biasanya digunakan untuk keperluan reverse DNS lookup. Di dalam file ini, terdapat record PTR (Pointer) yang memetakan alamat IP tertentu ke nama domain yang sesuai. Misalnya, alamat IP 192.168.56.10 dapat dipetakan ke nama domain ns1.dns.contoh.com. Konfigurasi ini penting untuk memastikan bahwa server DNS dapat melakukan pencarian terbalik (reverse lookup) dengan benar.
 ![ip](images/192.png)
 
+
+[ 1.4 Restart bind9 ]
+```bash
+systemctl restart bind9
+cd
+```
+
 ### Konfigurasi Resolv.conf
 ```bash
 nano /etc/resolv.conf
@@ -92,11 +99,7 @@ nano /etc/resolv.conf
 search contoh.com
 nameserver 192.168.99.1
 ```
-[ 1.4 Restart bind9 ]
-```bash
-systemctl restart bind9
-cd
-```
+
 ### Testing bind9 menggunakan dnsutils
 Uji coba ​bind9 dengan nslookup, dnsutils adalah kumpulan utilitas baris perintah di sistem operasi berbasis Linux yang digunakan untuk melakukan query dan mendiagnosis masalah terkait Domain Name System (DNS). Paket ini sering terinstal secara default pada distribusi seperti Debian dan Ubuntu
 ```bash
