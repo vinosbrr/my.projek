@@ -220,9 +220,9 @@ apt install mariadb-server roundcube
 ![internet site](images/10.png)
 ![internet site](images/11.png)
 
-[ 3.2 Edit file /etc/roundcube/config.inc.php. isi sesuaikan berikut ]
+[ 3.2 Edit file /etc/roundcube/config.inc.php isi sesuaikan berikut ]
 ```bash
-nano /etc/roundcube/config.inc.php.
+nano /etc/roundcube/config.inc.php
 ...
 // For example %n = mail.domain.tld, %t = domain.tld
 $config['default_host'] = 'mail.contoh.com';
