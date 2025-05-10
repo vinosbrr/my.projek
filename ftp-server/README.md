@@ -70,7 +70,8 @@ cd /etc/proftpd
 ls
 nano proftpd.conf
 ```
-named.conf.local adalah bagian dari konfigurasi BIND9 yang digunakan untuk mendeklarasikan zona DNS lokal. Di sini kita mendefinisikan nama domain apa yang akan di-handle oleh server, dan file zona mana yang digunakan untuk masing-masing domain tersebut.
+proftpd.conf adalah bagian utama dari konfigurasi ProFTPD yang digunakan untuk mengatur perilaku server FTP. Di dalam file ini, kita mendefinisikan berbagai parameter seperti port yang digunakan, direktori root pengguna, jenis autentikasi, serta opsi keamanan dan logging. File ini bersifat modular dan mudah disesuaikan untuk berbagai kebutuhan, baik untuk akses lokal, pengguna virtual, maupun akses anonim.
+
 ![NCL](images/ncl.png)
 [ 1.3 Setelah masuk  file proftpd.conf ]
 Unncomment pada bagian DefaultRoot  menjadi seperti ini.
@@ -78,11 +79,11 @@ Unncomment pada bagian DefaultRoot  menjadi seperti ini.
 # Use this to jail all users in their homes
 DefaultRoot                     ~  
 ```
-Scroll kebawah.. Unncomment pada bagian anonymous dan user, lalu tambahkan /home/ dan ganti ftp = usermu. Seperti berikut ini.  
+Scroll kebawah.. Unncomment pada bagian anonymous dan user, Hapus " ~ " lalu tambahkan /home/ dan ganti ftp = usermu. Seperti berikut ini.  
 ```bash
 # A basic anonymous configuration, no upload directories.
 
- <Anonymous    ~/home/usermu>
+ <Anonymous    /home/usermu>
   User                usermu
 ```
 Scroll kebawah.. Unncomment pada bagian anonymous
@@ -91,13 +92,22 @@ Scroll kebawah.. Unncomment pada bagian anonymous
 #
  </Anonymous>
 ```
-
-[ 1.3 copy file lokal dan edit file ]
+[ 1.4 Keluar directory dan buat user "usermu" ]
+Pada baian ini tambahkan user masukkan password saja, lalu enter hingga selesai.
 ```bash
-cp db.local db.domain
-cp db.127 db.192
-nano db.domain
+cd
+adduser usermu
 ```
+
+[ 1.5 Masuk ke user dan coba buat file nano testing.txt ]
+```bash
+cd /home
+ls
+cd usermu
+nano testing.txt
+```
+[ 1.6 Setelah masuk coba isikan seperti ini  ]
+
 File db.domain digunakan untuk menerjemahkan nama domain menjadi alamat IP. Di dalam file ini, terdapat beberapa record penting. Record SOA (Start of Authority) berisi informasi utama tentang zona, seperti nama domain utama dan alamat email administrator. Record NS (Nameserver) menunjukkan server DNS yang mengelola domain tersebut. Record A (Address) memetakan subdomain seperti www atau mail ke alamat IP tertentu. Selain itu, terdapat juga record MX (Mail Exchange) yang menunjukkan server email untuk domain tersebut.
 ![domain](images/d.png)
 ```bash
