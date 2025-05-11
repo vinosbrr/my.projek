@@ -107,41 +107,31 @@ cd usermu
 nano testing.txt
 ```
 [ 1.6 Setelah masuk coba isikan seperti ini  ]
+![tes](images/tes.png)
 
-File db.domain digunakan untuk menerjemahkan nama domain menjadi alamat IP. Di dalam file ini, terdapat beberapa record penting. Record SOA (Start of Authority) berisi informasi utama tentang zona, seperti nama domain utama dan alamat email administrator. Record NS (Nameserver) menunjukkan server DNS yang mengelola domain tersebut. Record A (Address) memetakan subdomain seperti www atau mail ke alamat IP tertentu. Selain itu, terdapat juga record MX (Mail Exchange) yang menunjukkan server email untuk domain tersebut.
-![domain](images/d.png)
+File testing.txt digunakan untuk bahan menguji apakah nanti file ini bisa di akeses dan melihat tampilannya.
+
+[ 1.7 Berikan izin dan akses seperti ini ]
 ```bash
-nano db.192
+chmod 777 /home/usermu
 ```
-file db.ip digunakan untuk menerjemahkan alamat IP menjadi nama domain. File ini biasanya digunakan untuk keperluan reverse DNS lookup. Di dalam file ini, terdapat record PTR (Pointer) yang memetakan alamat IP tertentu ke nama domain yang sesuai. Misalnya, alamat IP 192.168.56.10 dapat dipetakan ke nama domain ns1.dns.contoh.com. Konfigurasi ini penting untuk memastikan bahwa server DNS dapat melakukan pencarian terbalik (reverse lookup) dengan benar.
-![ip](images/192.png)
+Command ini digunakan untuk mengizinkan user group dan other, supaya bisa diotak atik.
 
-
-[ 1.4 Restart bind9 ]
+[ 1.4 Restart proftpd ]
 ```bash
-systemctl restart bind9
+systemctl restart proftpd
 cd
 ```
 
-### Konfigurasi Resolv.conf
-```bash
-nano /etc/resolv.conf
-```
-```bash
-search contoh.com
-nameserver 192.168.99.1
-```
-
-### Testing bind9 menggunakan dnsutils
-Uji coba ​bind9 dengan nslookup, dnsutils adalah kumpulan utilitas baris perintah di sistem operasi berbasis Linux yang digunakan untuk melakukan query dan mendiagnosis masalah terkait Domain Name System (DNS). Paket ini sering terinstal secara default pada distribusi seperti Debian dan Ubuntu
-```bash
-apt install dnsutils
-nslookup contoh.com
-nslookup mail.contoh.com
-nslookup 192.168.99.1 
-```
+### Testing proftpd menggunakan FileZilla
+1. Buka FileZilla.
+2. Di bagian atas, kamu akan melihat kolom untuk mengonfigurasi Host, Username, Password, dan Port.
+ - Host: Masukkan IP address atau hostname server ProFTPD yang ingin kamu hubungkan misalnya = 192.168.99.1
+ - Username: Masukkan username yang telah terdaftar di server FTP ProFTPD. = usermu
+ - Password: Masukkan password untuk username tersebut. = 1
+ - Port: Gunakan port 21 untuk koneksi FTP standar.
+5. Setelah semua informasi terisi, klik tombol Quickconnect.
 Selanjutnya jika berhasil akan muncul seperti gambar berikut
-![tes](images/ns.png)
 
 > © Developed by Vinosbrr
 ---
